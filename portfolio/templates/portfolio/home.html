@@ -1,0 +1,20 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+{% load static %}
+<h1><b class="kem">Welcome to my portfolio</b></h1>
+
+<div id="text" class="text12">
+    {% for x in Projects %}
+
+    <h1>{{ x.Title }}</h1><br>
+    
+    <img src=" {{ x.image.url }}" width="60px" height="60px"></Br>
+    <h3> {{ x.description }}</h3><br>
+    {% if x.url %}
+    <a href=" {{x.url}}">Click Here</a>
+    {% endif %}
+{% endfor %}
+</div>
+
+{% endblock %}
